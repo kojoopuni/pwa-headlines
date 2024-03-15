@@ -44,10 +44,10 @@ if ('mediaSession' in navigator) {
     navigator.mediaSession.playbackState = 'playing';
   });
   navigator.mediaSession.setActionHandler('seekbackward', function () {
-    audioElement.currentTime -= 10;
+    audioElement.currentTime -= 5;
   });
   navigator.mediaSession.setActionHandler('seekforward', function () {
-    audioElement.currentTime += 10;
+    audioElement.currentTime += 5;
   });
   navigator.mediaSession.setActionHandler('seekto', function (details) {
     audioElement.currentTime = details.seekTime;
