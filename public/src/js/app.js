@@ -43,5 +43,20 @@ if ('mediaSession' in navigator) {
     audioElement.play();
     navigator.mediaSession.playbackState = 'playing';
   });
+  navigator.mediaSession.setActionHandler('seekbackward', function () {
+    audioElement.currentTime -= 10;
+  });
+  navigator.mediaSession.setActionHandler('seekforward', function () {
+    audioElement.currentTime += 10;
+  });
+  navigator.mediaSession.setActionHandler('seekto', function (details) {
+    audioElement.currentTime = details.seekTime;
+  });
+  navigator.mediaSession.setActionHandler('previoustrack', function () {
+    // Set the previous track
+  });
+  navigator.mediaSession.setActionHandler('nexttrack', function () {
+    // Set the next track
+  });
   // Add other action handlers as needed, like nexttrack, previoustrack
 }
